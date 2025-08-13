@@ -843,8 +843,20 @@ section {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+    
     .container {
-        padding: 0 1rem;
+        max-width: 100%;
+        padding: 0 0.75rem;
+        margin: 0;
     }
     
     /* Hero Section Mobile */
@@ -896,9 +908,21 @@ section {
     }
     
     /* Projects Mobile */
+    .projects {
+        padding: 3rem 0;
+    }
+    
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .project-card {
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
     }
     
     .project-header {
@@ -929,9 +953,21 @@ section {
     }
     
     /* Non-Profit Mobile */
+    .nonprofit {
+        padding: 3rem 0;
+    }
+    
     .nonprofit-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nonprofit-card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
     }
     
     .slideshow-container {
@@ -968,9 +1004,20 @@ section {
     }
     
     /* Skills Mobile */
+    .skills {
+        padding: 3rem 0;
+    }
+    
     .skill-categories {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .skill-category {
+        width: 100%;
+        max-width: 100%;
     }
     
     .skill-tags {
@@ -1023,6 +1070,10 @@ section {
 
 /* Extra Small Mobile */
 @media (max-width: 480px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+    
     .hero h1 {
         font-size: 1.8rem;
     }
@@ -1033,7 +1084,7 @@ section {
     }
     
     .project-content {
-        padding: 1rem;
+        padding: 0.75rem;
     }
     
     .project-logo-round {
@@ -1046,7 +1097,20 @@ section {
     }
     
     .nonprofit-card {
-        padding: 1rem;
+        padding: 0.75rem;
+    }
+    
+    .tech-tag {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+    
+    .project-achievements li {
+        font-size: 0.85rem;
+    }
+    
+    .nonprofit-achievements li {
+        font-size: 0.8rem;
     }
 }
 

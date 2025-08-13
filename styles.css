@@ -66,6 +66,7 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    z-index: 1001;
 }
 
 .hamburger span {
@@ -74,6 +75,19 @@ body {
     background: #333;
     margin: 3px 0;
     transition: 0.3s;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 
 /* Hero Section */
@@ -912,17 +926,52 @@ section {
     }
     
     /* Navigation Mobile */
-    .nav-links {
-        flex-direction: column;
-        gap: 1rem;
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
         background: white;
-        position: absolute;
-        top: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding-top: 2rem;
+        display: flex !important;
+        gap: 0;
+    }
+    
+    .nav-menu.active {
         left: 0;
-        right: 0;
-        padding: 1rem;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        display: none;
+    }
+    
+    .nav-link {
+        width: 100%;
+        padding: 1.5rem 0;
+        text-align: center;
+        color: #333 !important;
+        text-decoration: none !important;
+        font-size: 1.2rem !important;
+        font-weight: 500 !important;
+        border-bottom: 1px solid #e5e7eb;
+        display: block !important;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover {
+        background-color: #f8fafc;
+        color: #2563eb !important;
+    }
+    
+    .nav-link:last-child {
+        border-bottom: none;
     }
     
     /* Projects Mobile */
